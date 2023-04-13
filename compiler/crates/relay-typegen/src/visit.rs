@@ -619,7 +619,7 @@ fn visit_relay_resolver(
 
     let live = resolver_metadata.live;
     let local_resolver_name =
-        resolver_metadata.generate_local_resolver_type_name(typegen_context.schema);
+        resolver_metadata.generate_local_resolver_name(typegen_context.schema);
 
     let resolver_type = relay_resolver_field_type(
         typegen_context,

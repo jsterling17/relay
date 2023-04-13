@@ -774,7 +774,6 @@ fn generate_disable_lint_section(language: &TypegenLanguage) -> Result<GenericSe
         TypegenLanguage::TypeScript => {
             writeln!(section, "/* tslint:disable */")?;
             writeln!(section, "/* eslint-disable */")?;
-            writeln!(section, "// @ts-nocheck")?;
         }
         TypegenLanguage::Flow | TypegenLanguage::JavaScript => {
             writeln!(section, "/* eslint-disable */")?;
