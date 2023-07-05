@@ -694,6 +694,10 @@ pub struct SingleProjectConfigFile {
     /// This option enables emitting es modules artifacts.
     pub eager_es_modules: bool,
 
+    #[serde(default)]
+    /// Enable type safety for generated types
+    pub enable_type_safety: bool,
+
     /// Query Persist Configuration
     /// It contains URL and addition parameters that will be included
     /// with the request (think API_KEY, APP_ID, etc...)
@@ -741,6 +745,7 @@ impl Default for SingleProjectConfigFile {
             custom_scalars: Default::default(),
             schema_config: Default::default(),
             eager_es_modules: false,
+            enable_type_safety: false,
             persist_config: None,
             is_dev_variable_name: None,
             codegen_command: None,
@@ -864,6 +869,7 @@ impl SingleProjectConfigFile {
                 language,
                 custom_scalar_types: self.custom_scalars.clone(),
                 eager_es_modules: self.eager_es_modules,
+                enable_type_safety: self.enable_type_safety,
                 flow_typegen: FlowTypegenConfig {
                     no_future_proof_enums: self.no_future_proof_enums,
                     ..Default::default()

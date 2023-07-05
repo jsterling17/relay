@@ -108,6 +108,10 @@ pub struct TypegenConfig {
     /// This option enables emitting es modules artifacts.
     #[serde(default)]
     pub eager_es_modules: bool,
+
+    /// Enable type safety for generated types
+    #[serde(default)]
+    pub enable_type_safety: bool,
 }
 
 #[derive(Default, Debug, Serialize, Deserialize, Clone, Copy)]
